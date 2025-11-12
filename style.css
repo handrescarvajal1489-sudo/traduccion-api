@@ -1,0 +1,613 @@
+/* ===========================
+   🎨 VARIABLES DE COLOR
+=========================== */
+:root {
+  --color-bg-1: #020617;
+  --color-bg-2: #020617;
+  --color-acento-1: #4f46e5;
+  --color-acento-2: #6366f1;
+  --color-texto: #e5e7eb;
+  --color-texto-suave: #9ca3af;
+  --color-borde: rgba(148, 163, 184, 0.5);
+  --radius-card: 18px;
+}
+
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌈 FONDO GENERAL CON DEGRADADO TURQUESA–VERDE */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--color-texto);
+
+  background: linear-gradient(135deg, #00abc8 0%, #80ba26 100%);
+  background-attachment: fixed;
+}
+
+
+/* Ruido suave */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  mix-blend-mode: soft-light;
+}
+
+/* ===========================
+   📦 CONTENEDOR PRINCIPAL
+=========================== */
+.app {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  border-radius: var(--radius-card);
+  padding: 1.9rem 2.1rem 2.4rem;
+  background: radial-gradient(
+      circle at top left,
+      rgba(148, 163, 184, 0.15),
+      transparent 50%
+    ),
+    rgba(15, 23, 42, 0.9);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  overflow: hidden;
+}
+
+/* Borde con brillo suave */
+.app::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.6),
+    rgba(56, 189, 248, 0.3),
+    rgba(15, 23, 42, 1)
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===========================
+   🔝 HEADER (TÍTULO + BADGE + SWITCH)
+=========================== */
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.app-header-left {
+  min-width: 0;
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+h1::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #22c55e, #16a34a);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* Lado derecho: badge + switch */
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Badge 🇨🇴 sólido y legible */
+.badge-colombia {
+  position: relative;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: .2px;
+
+  /* fondo sólido como los demás */
+  background: #1f2937; /* gris-azulado oscuro */
+  color: #f9fafb;
+
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow:
+    0 8px 16px rgba(15, 23, 42, 0.6),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+/* Línea tricolor sutil (decorativa) */
+.badge-colombia::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #facc15 0 33%, #1d4ed8 33% 66%, #dc2626 66% 100%);
+  opacity: .9;
+}
+
+/* Hover/Focus para mejor feedback */
+.badge-colombia:hover,
+.badge-colombia:focus-visible {
+  background: #0f172a; /* un poco más oscuro */
+  box-shadow:
+    0 12px 24px rgba(15, 23, 42, 0.8),
+    0 0 0 1px rgba(79, 70, 229, 0.6);
+  outline: none;
+}
+
+
+/* Switch tema */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.55rem 0.18rem 0.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+  font-size: 0.78rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-toggle-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.8);
+  transition: transform 0.15s ease;
+}
+
+.theme-toggle-label {
+  font-weight: 500;
+}
+
+.theme-toggle:hover .theme-toggle-circle {
+  transform: translateX(2px);
+}
+
+/* ===========================
+   🧩 PANEL PRINCIPAL
+=========================== */
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+  align-items: stretch;
+}
+
+.columna {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: radial-gradient(
+      circle at top,
+      rgba(30, 64, 175, 0.32),
+      transparent 60%
+    ),
+    rgba(15, 23, 42, 0.96);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.7);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+.columna::before {
+  content: "";
+  position: absolute;
+  inset: 0 18%;
+  height: 2px;
+  margin-top: 0.3rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(129, 140, 248, 0.6),
+    rgba(236, 72, 153, 0.35),
+    rgba(56, 189, 248, 0.6)
+  );
+  opacity: 0.4;
+}
+
+.columna:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 40px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(129, 140, 248, 0.5);
+  border-color: rgba(129, 140, 248, 0.85);
+}
+
+/* ===========================
+   🔡 LABELS Y SELECTS
+=========================== */
+label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #f9fafb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #22c55e, #16a34a);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+}
+
+/* SELECT sólido elegante (sin bandera) */
+select {
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background-color: #020617;
+  color: #f9fafb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 1),
+    0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.15s ease-in-out;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+    linear-gradient(135deg, #9ca3af 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) calc(50% - 3px),
+    calc(100% - 9px) calc(50% - 3px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+select:hover {
+  background-color: #0f172a;
+  box-shadow:
+    0 0 0 1px rgba(79, 70, 229, 0.5),
+    0 0 15px rgba(79, 70, 229, 0.3);
+}
+
+select:focus-visible {
+  border-color: rgba(129, 140, 248, 0.95);
+  box-shadow:
+    0 0 0 1px rgba(79, 70, 229, 0.9),
+    0 0 0 6px rgba(79, 70, 229, 0.25);
+}
+
+select option {
+  background-color: #0f172a;
+  color: #f9fafb;
+  font-weight: 500;
+}
+
+select option:hover,
+select option:checked {
+  background-color: #1e3a8a;
+  color: #facc15;
+}
+
+/* ===========================
+   🧾 TEXTAREAS
+=========================== */
+textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  background: radial-gradient(circle at top, #020617, #020617 60%);
+  color: #f9fafb;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.42;
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 23, 42, 0.95),
+    0 18px 28px rgba(15, 23, 42, 0.9);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease,
+    background-color 0.12s ease, transform 0.08s ease;
+}
+
+textarea::placeholder {
+  color: #6b7280;
+}
+
+textarea:focus-visible {
+  border-color: rgba(129, 140, 248, 0.9);
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 23, 42, 1),
+    0 0 0 1px rgba(79, 70, 229, 0.8),
+    0 0 0 8px rgba(79, 70, 229, 0.22);
+  transform: translateY(-1px);
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.7);
+  border-radius: 999px;
+}
+
+/* ===========================
+   🔢 CONTADOR
+=========================== */
+.contador {
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  text-align: right;
+  margin-top: -0.1rem;
+}
+
+/* ===========================
+   🔘 BOTONES
+=========================== */
+.acciones {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease,
+    border-color 0.12s ease,
+    opacity 0.12s ease;
+  user-select: none;
+}
+
+.btn.primario {
+  background: linear-gradient(
+    135deg,
+    var(--color-acento-1),
+    var(--color-acento-2)
+  );
+  color: #f9fafb;
+  box-shadow:
+    0 12px 24px rgba(79, 70, 229, 0.6),
+    0 0 0 1px rgba(30, 64, 175, 0.7);
+}
+
+.btn.primario:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 18px 36px rgba(79, 70, 229, 0.9),
+    0 0 18px rgba(129, 140, 248, 0.9);
+}
+
+.btn.primario:active {
+  transform: translateY(0);
+  box-shadow:
+    0 8px 16px rgba(79, 70, 229, 0.7),
+    0 0 0 1px rgba(30, 64, 175, 0.9);
+}
+
+.btn.fantasma {
+  background: transparent;
+  color: var(--color-texto);
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn.fantasma:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+}
+
+.btn.secundario {
+  background: rgba(31, 41, 55, 0.96);
+  color: #f9fafb;
+  border-color: rgba(148, 163, 184, 0.7);
+  font-size: 0.8rem;
+  padding: 0.45rem 0.95rem;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.85);
+}
+
+.btn.secundario:hover {
+  background: rgba(55, 65, 81, 0.98);
+  box-shadow:
+    0 14px 28px rgba(15, 23, 42, 0.95),
+    0 0 12px rgba(148, 163, 184, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.fila-botones-texto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+/* ===========================
+   💬 MENSAJES
+=========================== */
+.mensaje {
+  margin-top: 1.1rem;
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--color-texto);
+}
+.mensaje.ok {
+  color: #4ade80;
+}
+.mensaje.error {
+  color: #f97373;
+}
+
+/* ===========================
+   💡 TIP EXTRA
+=========================== */
+.tips {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+.tips strong {
+  color: #e5e7eb;
+}
+
+/* ===========================
+   🌞 MODO CLARO
+=========================== */
+body.light-theme {
+  background:
+    radial-gradient(circle at 0% 0%, #e5e7eb 0, #f9fafb 40%, #e5e7eb 100%),
+    none;
+  color: #111827;
+}
+
+body.light-theme .app {
+  background: #ffffff;
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.2),
+    0 0 0 1px rgba(209, 213, 219, 0.9);
+}
+
+body.light-theme .columna {
+  background: #f9fafb;
+  box-shadow: 0 15px 30px rgba(148, 163, 184, 0.4);
+  border-color: rgba(209, 213, 219, 0.9);
+}
+
+body.light-theme textarea {
+  background: #f9fafb;
+  color: #111827;
+}
+
+body.light-theme select {
+  background-color: #e5e7eb;
+  color: #111827;
+  box-shadow:
+    0 0 0 1px rgba(209, 213, 219, 1),
+    0 6px 12px rgba(148, 163, 184, 0.4);
+}
+
+body.light-theme .badge-colombia {
+  box-shadow: 0 0 10px rgba(252, 211, 77, 0.9);
+}
+
+body.light-theme .theme-toggle {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* ===========================
+   📱 RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app {
+    padding: 1.5rem 1.3rem 1.8rem;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header-right {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+}
+
+/* ===========================
+   💧 MARCA DE AGUA
+=========================== */
+.app::after {
+  content: "🖋️  Hollman Carvajal - Jaime Lozano";
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(148, 163, 184, 0.45); /* gris tenue */
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.4px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traductor con pronunciación</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- HEADER CON BADGE + SWITCH TEMA -->
+    <div class="app-header">
+      <div class="app-header-left">
+        <h1>🌐 Traductor con pronunciación</h1>
+        <p class="subtitulo">
+          Usando la API de traducción MyMemory + la voz del navegador
+        </p>
+      </div>
+
+      <div class="app-header-right">
+        <span class="badge-colombia">🇨🇴 Traductor</span>
+
+        <button
+          id="btnThemeToggle"
+          type="button"
+          class="theme-toggle"
+          aria-label="Cambiar tema"
+        >
+          <span class="theme-toggle-circle"></span>
+          <span class="theme-toggle-label">Oscuro</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PANEL PRINCIPAL -->
+    <div class="panel">
+      <!-- COLUMNA ORIGEN -->
+      <div class="columna">
+        <label for="idiomaOrigen">De</label>
+        <select id="idiomaOrigen"></select>
+
+        <textarea
+          id="textoOrigen"
+          placeholder="Escribe el texto a traducir..."
+        ></textarea>
+        <div class="contador" id="contadorOrigen">0 caracteres</div>
+
+        <button id="btnPronunciarOrigen" class="btn secundario">
+          🔊 Pronunciar original
+        </button>
+      </div>
+
+      <!-- COLUMNA DESTINO -->
+      <div class="columna">
+        <label for="idiomaDestino">A</label>
+        <select id="idiomaDestino"></select>
+
+        <textarea
+          id="textoTraducido"
+          placeholder="Aquí verás la traducción..."
+          readonly
+        ></textarea>
+
+        <div class="fila-botones-texto">
+          <button id="btnPronunciarTraduccion" class="btn secundario">
+            🔊 Pronunciar traducción
+          </button>
+          <button id="btnCopiarTraduccion" class="btn secundario">
+            📋 Copiar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTONES PRINCIPALES -->
+    <div class="acciones">
+      <button id="btnIntercambiar" class="btn fantasma">
+        ↔️ Intercambiar idiomas
+      </button>
+      <button id="btnTraducir" class="btn primario">
+        Traducir
+      </button>
+      <button id="btnLimpiar" class="btn fantasma">
+        Limpiar
+      </button>
+    </div>
+
+    <div id="mensaje" class="mensaje"></div>
+
+    <p class="tips">
+      💡 Tip: usa <strong>Ctrl + Enter</strong> para traducir rápido.
+      El idioma y el tema se guardan automáticamente.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
