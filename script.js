@@ -309,6 +309,3 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
-
-
-
