@@ -5,37 +5,19 @@ const URL_TRADUCTOR = "https://api.mymemory.translated.net/get";
 
 // Idiomas disponibles
 const IDIOMAS = {
-  "es-ES": "Español (España)",
-  "es-MX": "Español (México)",
-  "en-US": "Inglés (EE.UU.)",
-  "en-GB": "Inglés (Reino Unido)",
-  "fr-FR": "Francés (Francia)",
-  "fr-CA": "Francés (Canadá)",
-  "de-DE": "Alemán",
-  "it-IT": "Italiano",
-  "pt-PT": "Portugués (Portugal)",
+  "es-ES": "Español",
+  "en-GB": "Inglés (UK)",
+  "en-US": "Inglés (US)",
+  "fr-FR": "Francés",
   "pt-BR": "Portugués (Brasil)",
+  "it-IT": "Italiano",
+  "de-DE": "Alemán",
   "ru-RU": "Ruso",
   "ja-JP": "Japonés",
   "zh-CN": "Chino (Simplificado)",
-  "zh-TW": "Chino (Tradicional)",
   "ko-KR": "Coreano",
-  "ar-SA": "Árabe (Arabia Saudita)",
-  "hi-IN": "Hindi",
-  "tr-TR": "Turco",
-  "pl-PL": "Polaco",
-  "nl-NL": "Neerlandés",
-  "sv-SE": "Sueco",
-  "no-NO": "Noruego",
-  "fi-FI": "Finés",
-  "da-DK": "Danés",
-  "el-GR": "Griego",
-  "cs-CZ": "Checo",
-  "hu-HU": "Húngaro",
-  "ro-RO": "Rumano",
-  "bg-BG": "Búlgaro",
-  "uk-UA": "Ucraniano",
-  "he-IL": "Hebreo",
+  "ar-SA": "Árabe",
+  "hi-IN": "Hindi"
 };
 
 // Referencias al DOM
@@ -327,5 +309,6 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
+
 
 
