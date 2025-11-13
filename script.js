@@ -5,7 +5,8 @@ const URL_TRADUCTOR = "https://api.mymemory.translated.net/get";
 
 // Idiomas disponibles
 const IDIOMAS = {
-  "es-ES": "Español",
+  "es-ES": "Español (España)",
+  "es-MX": "Español (México)",
   "en-GB": "Inglés (UK)",
   "en-US": "Inglés (US)",
   "fr-FR": "Francés",
@@ -17,9 +18,13 @@ const IDIOMAS = {
   "zh-CN": "Chino (Simplificado)",
   "ko-KR": "Coreano",
   "ar-SA": "Árabe",
-  "hi-IN": "Hindi"
+  "hi-IN": "Hindi",
+  "nl-NL": "Neerlandés",
+  "sv-SE": "Sueco",
+  "no-NO": "Noruego",
+  "pl-PL": "Polaco",
+  "tr-TR": "Turco"
 };
-
 
 // Referencias al DOM
 const idiomaOrigen = document.getElementById("idiomaOrigen");
@@ -310,5 +315,6 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
+
 
 
