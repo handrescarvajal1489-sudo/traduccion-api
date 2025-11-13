@@ -4,21 +4,73 @@
 const URL_TRADUCTOR = "https://api.mymemory.translated.net/get";
 
 // Idiomas disponibles
+// 🌍 Lista ampliada de idiomas compatibles con la API MyMemory
 const IDIOMAS = {
-  "es-ES": "Español",
-  "en-GB": "Inglés (UK)",
-  "en-US": "Inglés (US)",
-  "fr-FR": "Francés",
-  "pt-BR": "Portugués (Brasil)",
-  "it-IT": "Italiano",
+  "es-ES": "Español (España)",
+  "es-MX": "Español (México)",
+  "en-US": "Inglés (EE.UU.)",
+  "en-GB": "Inglés (Reino Unido)",
+  "fr-FR": "Francés (Francia)",
+  "fr-CA": "Francés (Canadá)",
   "de-DE": "Alemán",
+  "it-IT": "Italiano",
+  "pt-PT": "Portugués (Portugal)",
+  "pt-BR": "Portugués (Brasil)",
   "ru-RU": "Ruso",
   "ja-JP": "Japonés",
   "zh-CN": "Chino (Simplificado)",
+  "zh-TW": "Chino (Tradicional)",
   "ko-KR": "Coreano",
-  "ar-SA": "Árabe",
-  "hi-IN": "Hindi"
+  "ar-SA": "Árabe (Arabia Saudita)",
+  "hi-IN": "Hindi",
+  "tr-TR": "Turco",
+  "pl-PL": "Polaco",
+  "nl-NL": "Neerlandés",
+  "sv-SE": "Sueco",
+  "no-NO": "Noruego",
+  "fi-FI": "Finés",
+  "da-DK": "Danés",
+  "el-GR": "Griego",
+  "cs-CZ": "Checo",
+  "hu-HU": "Húngaro",
+  "ro-RO": "Rumano",
+  "bg-BG": "Búlgaro",
+  "uk-UA": "Ucraniano",
+  "he-IL": "Hebreo",
+  "th-TH": "Tailandés",
+  "id-ID": "Indonesio",
+  "ms-MY": "Malayo",
+  "vi-VN": "Vietnamita",
+  "fa-IR": "Persa",
+  "sw-KE": "Suajili",
+  "ta-IN": "Tamil",
+  "bn-BD": "Bengalí",
+  "ur-PK": "Urdu",
+  "sr-RS": "Serbio",
+  "sk-SK": "Eslovaco",
+  "sl-SI": "Esloveno",
+  "et-EE": "Estonio",
+  "lv-LV": "Letón",
+  "lt-LT": "Lituano",
+  "ga-IE": "Irlandés",
+  "cy-GB": "Galés",
+  "af-ZA": "Afrikáans",
+  "sq-AL": "Albanés",
+  "am-ET": "Amárico",
+  "hy-AM": "Armenio",
+  "az-AZ": "Azerí",
+  "eu-ES": "Vasco",
+  "ca-ES": "Catalán",
+  "hr-HR": "Croata",
+  "mt-MT": "Maltés",
+  "mn-MN": "Mongol",
+  "ne-NP": "Nepalí",
+  "tl-PH": "Tagalo (Filipinas)",
+  "zu-ZA": "Zulú",
+  "xh-ZA": "Xhosa",
+  "yo-NG": "Yoruba"
 };
+
 
 // Referencias al DOM
 const idiomaOrigen = document.getElementById("idiomaOrigen");
@@ -309,3 +361,4 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
+
