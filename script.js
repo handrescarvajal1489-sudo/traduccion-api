@@ -18,6 +18,42 @@ const IDIOMAS = {
   "ko-KR": "Coreano",
   "ar-SA": "Árabe",
   "hi-IN": "Hindi"
+   af: "Afrikáans",
+  sq: "Albanés",
+  am: "Amárico",
+  ar: "Árabe",
+  hy: "Armenio",
+  az: "Azerí",
+  eu: "Vasco",
+  be: "Bielorruso",
+  bn: "Bengalí",
+  bs: "Bosnio",
+  bg: "Búlgaro",
+  ca: "Catalán",
+  ceb: "Cebuano",
+  ny: "Chichewa",
+  zh: "Chino (Simplificado)",
+  zh-TW: "Chino (Tradicional)",
+  co: "Corso",
+  hr: "Croata",
+  cs: "Checo",
+  da: "Danés",
+  nl: "Neerlandés",
+  en: "Inglés",
+  eo: "Esperanto",
+  et: "Estonio",
+  fi: "Finés",
+  fr: "Francés",
+  fy: "Frisio",
+  gl: "Gallego",
+  ka: "Georgiano",
+  de: "Alemán",
+  el: "Griego",
+  gu: "Gujarati",
+  ht: "Haitiano",
+  ha: "Hausa",
+  haw: "Hawaiano"
+
 };
 
 // Referencias al DOM
@@ -309,3 +345,4 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
+
