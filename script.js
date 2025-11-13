@@ -35,7 +35,7 @@ const IDIOMAS = {
   "ro-RO": "Rumano",
   "bg-BG": "Búlgaro",
   "uk-UA": "Ucraniano",
-  "he-IL": "Hebreo"
+  "he-IL": "Hebreo",
 };
 
 // Referencias al DOM
