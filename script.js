@@ -5,7 +5,6 @@ const URL_TRADUCTOR = "https://api.mymemory.translated.net/get";
 
 // Idiomas disponibles
 const IDIOMAS = {
-  "es-ES": "Español (España)",
   "es-MX": "Español (México)",
   "en-GB": "Inglés (UK)",
   "en-US": "Inglés (US)",
@@ -315,6 +314,7 @@ textoOrigen.addEventListener("input", actualizarContador);
 if (btnThemeToggle) {
   btnThemeToggle.addEventListener("click", alternarTema);
 }
+
 
 
 
